@@ -1,0 +1,48 @@
+==============================================================================
+EPISODE 1  | hidden intent: claim_status | needs human: True | patience: 0.90
+  classifier guess: provider_search (max belief 0.60)
+==============================================================================
+ turn  1 | agent: offer_self_service | self-service link did not solve it         | frustration 0.08 | reward -1
+        (masked until identity verified: lookup_claims, lookup_benefits, lookup_provider, give_answer)
+ turn  2 | agent: escalate           | (member responds)                          | frustration 0.16 | reward +4
+ --> OUTCOME: escalated_appropriate  | total reward +3 | PHI violations: 0
+
+==============================================================================
+EPISODE 2  | hidden intent: billing_dispute | needs human: False | patience: 0.65
+  classifier guess: billing_dispute (max belief 0.61)
+==============================================================================
+ turn  1 | agent: verify_identity    | identity verified                          | frustration 0.11 | reward -1
+        (masked until identity verified: lookup_claims, lookup_benefits, lookup_provider, give_answer)
+ turn  2 | agent: lookup_claims      | (member responds)                          | frustration 0.22 | reward -1
+ turn  3 | agent: give_answer        | (member responds)                          | frustration 0.32 | reward +19
+ --> OUTCOME: resolved  | total reward +17 | PHI violations: 0
+
+==============================================================================
+EPISODE 3  | hidden intent: billing_dispute | needs human: False | patience: 0.61
+  classifier guess: billing_dispute (max belief 0.66)
+==============================================================================
+ turn  1 | agent: verify_identity    | identity verified                          | frustration 0.11 | reward -1
+        (masked until identity verified: lookup_claims, lookup_benefits, lookup_provider, give_answer)
+ turn  2 | agent: lookup_claims      | (member responds)                          | frustration 0.23 | reward -1
+ turn  3 | agent: give_answer        | (member responds)                          | frustration 0.34 | reward +19
+ --> OUTCOME: resolved  | total reward +17 | PHI violations: 0
+
+==============================================================================
+EPISODE 4  | hidden intent: billing_dispute | needs human: False | patience: 0.81
+  classifier guess: provider_search (max belief 0.72)
+==============================================================================
+ turn  1 | agent: offer_self_service | self-service link did not solve it         | frustration 0.09 | reward -1
+        (masked until identity verified: lookup_claims, lookup_benefits, lookup_provider, give_answer)
+ turn  2 | agent: escalate           | (member responds)                          | frustration 0.17 | reward -11
+ --> OUTCOME: escalated_unnecessary  | total reward -12 | PHI violations: 0
+
+==============================================================================
+EPISODE 5  | hidden intent: prior_auth | needs human: True | patience: 0.60
+  classifier guess: prior_auth (max belief 0.60)
+==============================================================================
+ turn  1 | agent: verify_identity    | identity verified                          | frustration 0.12 | reward -1
+        (masked until identity verified: lookup_claims, lookup_benefits, lookup_provider, give_answer)
+ turn  2 | agent: lookup_claims      | (member responds)                          | frustration 0.23 | reward -1
+ turn  3 | agent: give_answer        | (member responds)                          | frustration 0.35 | reward -16
+ --> OUTCOME: wrong_answer  | total reward -18 | PHI violations: 0
+

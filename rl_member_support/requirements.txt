@@ -1,0 +1,7 @@
+numpy
+scipy
+matplotlib
+gymnasium>=1.0
+torch
+stable-baselines3
+sb3-contrib
